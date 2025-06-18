@@ -1,6 +1,25 @@
-# Pet Academy 🐾
+# Pet Academy: Virtual Pet Application
+Pet Academy is a virtual pet application that allows users to care for and nurture their own digital companions. It offers a comprehensive set of features to enhance the user experience:
 
-A modern virtual pet simulation game backend built with Spring Boot, where users can create, care for, and nurture their digital companions in an engaging academy environment.
+### In this application you can:
+1.  **Register:**
+	* New users can sign up by creating a username and password.
+2.  **Login:** 
+    * Existing users can log in with their credentials to obtain a JWT token, granting them access to the application.
+3.  **Create:** 
+    * Users can bring new virtual pets to life, choosing from a diverse selection of creatures such as dragons, unicorns, and
+4.  **Read:** 
+    * The application displays all existing virtual pets within a vibrant and colorful virtual environment. Users can interact with their pets and monitor their mood, energy levels, and needs.
+5.  **Update:** 
+    * Users can nurture and personalize their virtual pets by feeding them, playing with them, purchasing fun accessories, and even pets.
+6.  **Delete:** 
+    * Users have the option to remove virtual pets they no longer wish to care for. Upon confirmation, the pet disappears from their virtual environment, but they can always create a new one.
+7.  **ROLES:** 
+    * User (ROLE_USER): Users with this role can only access, view, update, and delete their own virtual pets.
+    * Admin (ROLE_ADMIN): Administrator have full access to all virtual pets in the system, allowing them to view, update, and block any user  regardless of its owner.
+    * Admin (ROLE_SUB_ADMIN): The ROLE_ADMIN Administrator can convert users to  ROLE_SUB_ADMIN, and reverse. they have full access to all virtual pets in the system, allowing them to view, update, and block any user regardless of its owner.
+
+## Installation
 
 ## Table of Contents
 
@@ -69,14 +88,15 @@ Pet Academy is a comprehensive virtual pet management system that combines the n
 - npm 9.0 or higher (or yarn/pnpm equivalent)
 
 ### Backend
-- Java 17 or higher
+- Java 21 or higher
 - Maven 3.6 or higher
 - MongoDB 4.4 or higher
+- PostgreSQL
 
 ### Development Tools
 - Git
 - Modern web browser
-- Code editor (VS Code recommended)
+- Code editor (IntelliJ recommended)
 
 ## Installation
 
@@ -87,17 +107,11 @@ cd pet-academy
 \`\`\`
 
 ### 2. Frontend Setup
-    read the README.md documentation in https://github.com/alescu/S05T02N01_frontend.git
+    Read the README.md documentation in https://github.com/alescu/S05T02N01_frontend.git
 
-# Install dependencies
-npm install
-In some cases it is necessary to run the installation 
-with the command "npm install --legacy-peer-deps"
-
-# Create environment file
-cp .env.example .env.local
 
 # Configure environment variables
+
 # NEXT_PUBLIC_API_URL=http://localhost:8081
 \`\`\`
 
@@ -117,13 +131,14 @@ cp src/main/resources/application.properties.example src/main/resources/applicat
 
 ### 4. Database Setup
 \`\`\`bash
-# Start MongoDB (if using Docker)
-docker run -d -p 27017:27017 --name pet-academy-db mongo:latest
+# Start MongoDB (Docker or application)
+docker run -d -p 27017:27017 --name pet-academy-db mongo:latest (Example)
 
 # Or install MongoDB locally following official documentation
 \`\`\`
+# Start PostgresSQL (Docker or application)
+In 33061 port and then use the script sql to create the database and tables.
 
-## Usage
 
 ### Starting the Application
 
@@ -141,13 +156,21 @@ npm run dev
 \`\`\`
 The application will be available at `http://localhost:3000`
 
+3. **read the Backend API information**:
+The API will be available at `http://localhost:8081/swagger-ui/index.htm`
+
+
 ### Basic Workflow
 
-1. **Register**: Create a user new account at `/register`
-2. **Login**: Access your account at `/login`
+1. **Login**: Access your account at `/login`
+2. **Register**: Create a user new account at `/register`
 3. **Create Pet**: Add your first virtual pet from the dashboard
-4. **Care for Pet**: Use the pet detail page to feed, play, and care for your pet
-5. **Monitor Status**: Keep track of your pet's health and happiness levels
+4. **Play with your Pet**: Use the pet detail page to feed, play, and care for your pet
+4. **Delete your Pet**: You can delete your pets
+5. **Monitorize Status**: Keep track of your pet's health and happiness levels
+6. **Monitorize users**: Keep track of your user's
+7. **Create admin users**: You can create news admin user's
+8. **Create users from Admin user**: You can create news user from admin user.
 
 ### Admin Features
 
