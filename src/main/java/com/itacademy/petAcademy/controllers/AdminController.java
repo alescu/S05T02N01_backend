@@ -1,8 +1,5 @@
 package com.itacademy.petAcademy.controllers;
 
-import com.itacademy.petAcademy.entities.User;
-import com.itacademy.petAcademy.models.RegisterCredentials;
-import com.itacademy.petAcademy.models.UserDto;
 import com.itacademy.petAcademy.services.PetService;
 import com.itacademy.petAcademy.services.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -25,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Tag(name = "Administration Controller")

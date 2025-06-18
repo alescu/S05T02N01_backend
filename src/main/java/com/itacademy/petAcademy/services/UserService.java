@@ -8,7 +8,6 @@ import com.itacademy.petAcademy.security.JwtService;
 import com.itacademy.petAcademy.security.Rol;
 import jakarta.transaction.Transactional;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Role;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +18,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -184,9 +182,9 @@ public class UserService implements UserDetailsService {
     }
 
     public List<UserDto> convertUsersToUserDtos(List<User> users) {
-        return users.stream() // 1. Crea un stream a partir de la llista d'usuaris
-                .map(user -> new UserDto(user)) // 2. Transforma cada objecte User en un UserDto
-                .collect(Collectors.toList()); // 3. Recull els UserDto resultants en una nova llista
+        return users.stream()
+                .map(user -> new UserDto(user))
+                .collect(Collectors.toList());
     }
 
 }

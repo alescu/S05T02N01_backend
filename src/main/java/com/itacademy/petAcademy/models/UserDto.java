@@ -1,7 +1,6 @@
 package com.itacademy.petAcademy.models;
 
 import com.itacademy.petAcademy.entities.User;
-import com.mongodb.lang.Nullable;
 import lombok.*;
 import java.time.LocalDateTime;
 

@@ -336,40 +336,4 @@ public class AuthController {
         }
     }
 
-    /*
-    @PutMapping("/{userName}/resetPassword")
-    public ResponseEntity<Map<String,Object>> resetPassword(
-            @RequestBody RegisterCredentials loginCredentials, @PathVariable String userName
-    ){
-        String newPassword = PasswordGenerator.generatePasswordWithSpecialChars(10);
-        userService.resetPasswordFailedLoginAttempts(userName, newPassword);
-
-        String token = userService.generateTokenForAuthenticatedUser(loginCredentials.getUsername());
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("UserNewPassword", newPassword);
-        response.put("jwt-token", token);
-
-        return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("/generatePassword")
-    @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<Map<String,Object>> generatePassword(){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String authenticatedUsername = authentication.getName();
-
-        String newPassword = PasswordGenerator.generatePasswordWithSpecialChars(10);
-
-        String token = userService.generateTokenForAuthenticatedUser(authenticatedUsername);
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("authenticatedUsername", authenticatedUsername);
-        response.put("newPassword", newPassword);
-        response.put("jwt-token", token);
-
-        return ResponseEntity.ok(response);
-    }
-    */
-
 }
