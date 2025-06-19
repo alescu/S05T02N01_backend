@@ -27,6 +27,8 @@ public class Pet {
 
     public Integer health = 5;
 
+    public Integer hygiene = 5;
+
     public List<String> objects = new ArrayList<>();
 
     public String background;

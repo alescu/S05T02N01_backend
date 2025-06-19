@@ -155,9 +155,11 @@ public class UserController {
         String authenticatedUsername = authentication.getName();
 
         Pet pet = petService.getPetByName(petName);
+        pet.setHunger(newPetCredentials.getHunger());
         pet.setHappiness(newPetCredentials.getHappiness());
         pet.setEnergy(newPetCredentials.getEnergy());
-        pet.setHunger(newPetCredentials.getHunger());
+        pet.setHealth(newPetCredentials.getHealth());
+        pet.setHygiene(newPetCredentials.getHygiene());
         pet.setBackground(newPetCredentials.getBackground());
 
         pet.setObjects(newPetCredentials.getObjects());
